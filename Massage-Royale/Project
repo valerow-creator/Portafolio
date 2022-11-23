@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- https://cdnjs.com/libraries/font-awesome -->
+    <link rel="stylesheet" href="style.css" />
+    <title>MASSAGE SUÉDOIS: D'ÉTENTE</title>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <nav>
+          <h1 class="logo"><a href="index.html">Massage Royale</a></h1>
+          <ul class="nav__services">
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="index.html#location">Location</a></li>
+            <li><a href="#form">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="services">
+      <div class="container">
+        <h1>SERVICES</h1>
+        <div class="services__description">
+          <div class="cards">
+            <div class="card">
+              <label name="type-de-massage"
+                ><h3>MASSAGE SUÉDOIS: D'ÉTENTE</h3></label
+              >
+
+              <small>60min $80 / 90min $100 / 120min $120</small>
+              <p>
+                Grâce à des gestes doux et fermes, le massage suédois vise à
+                détendre les muscles. Cette technique favorise la souplesse des
+                articulations et soulage les tensions musculaires.
+              </p>
+
+              <form id="forms">
+                <p>Réservez la date et l'heure qui vous conviennent:</p>
+                <label>Date:</label>
+                <input
+                  type="date"
+                  id="start"
+                  name="date"
+                  value="2022-11-01"
+                  min="2022-11-01"
+                />
+
+                <label for="appt">Heure:</label>
+                <input
+                  type="time"
+                  id="time"
+                  name="time"
+                  min="09:00"
+                  max="20:00"
+                  value="09:00"
+                  required
+                />
+
+                <label>Temps:</label>
+                <select id="temps" class="temps" name="temps">
+                  <option value="selectionner">Sélectionner</option>
+                  <option value="60-min-d-etente" name="60-min-d-etente">
+                    60 min
+                  </option>
+                  <option value="90-min-d-etente" name="90-min-d-etente">
+                    90 min
+                  </option>
+                  <option value="120-min-d-etente" name="120-min-d-etente">
+                    120 min
+                  </option>
+                </select>
+
+                <input
+                  type="text"
+                  id="name"
+                  placeholder="Your Name"
+                  name="name"
+                  required
+                />
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="Email"
+                  name="email"
+                  required
+                />
+                <input
+                  type="tel"
+                  id="phone"
+                  placeholder="Phone"
+                  name="phone"
+                  required
+                />
+
+                <input
+                  type="submit"
+                  class="btn-d-etente"
+                  id="button-d-etente"
+                  value="RESERVEZ"
+                />
+              </form>
+
+              <script
+                type="text/javascript"
+                src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+              ></script>
+
+              <script type="text/javascript">
+                emailjs.init('0EqkDZrYJxz2Gzf5z');
+              </script>
+            </div>
+          </div>
+          <img
+            src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2624&q=80"
+            alt="D'etente"
+          />
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="container">
+        <div class="split">
+          <div class="schedule">
+            <h2>OPENING HOURS</h2>
+            <p>
+              Monday to Thursday: 10am to 10pm <br />
+              Friday to Sunday: 9am to 10pm
+            </p>
+          </div>
+
+          <form id="form">
+            <h2>GET IN TOUCH</h2>
+            <input
+              type="text"
+              id="name"
+              placeholder="Your Name"
+              name="name"
+              required
+            />
+            <input
+              type="email"
+              id="email"
+              placeholder="Email"
+              name="email"
+              required
+            />
+            <input
+              type="tel"
+              id="phone"
+              placeholder="Phone"
+              name="phone"
+              required
+            />
+            <textarea
+              name="message"
+              id="message"
+              rows="4"
+              placeholder="Message"
+            ></textarea>
+            <input type="submit" id="button" class="btn" value="Send Email" />
+          </form>
+          <script
+            type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+          ></script>
+
+          <script type="text/javascript">
+            emailjs.init('0EqkDZrYJxz2Gzf5z');
+          </script>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script>
+    const btnDetente = document.getElementById('button-d-etente');
+
+    document
+      .getElementById('forms')
+      .addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        btnDetente.value = 'Sending...';
+
+        const serviceID = 'default_service';
+        const templateID = 'template_6mqg58v';
+
+        emailjs.sendForm(serviceID, templateID, this).then(
+          () => {
+            btnDetente.value =
+              'Réservation Envoyé. Votre confirmation arrivera bientôt';
+            alert('Sent!');
+          },
+          (err) => {
+            btnDetente.value = 'Send Email';
+            alert(JSON.stringify(err));
+          }
+        );
+      });
+  </script>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- https://cdnjs.com/libraries/font-awesome -->
+    <link rel="stylesheet" href="style.css" />
+    <title>Massage de la femme encinte</title>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <nav>
+          <h1 class="logo"><a href="index.html">Massage Royale</a></h1>
+          <ul class="nav__services">
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="index.html#location">Location</a></li>
+            <li><a href="#form">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="services">
+      <div class="container">
+        <h1>SERVICES</h1>
+        <div class="services__description">
+          <div class="cards">
+            <div class="card">
+              <label name="type-de-massage"
+                ><h3>MASSAGE DE LA FEMME ENCINTE</h3></label
+              >
+
+              <small>60min $80 / 90min $100 / 120min $120</small>
+              <p>
+                Cet approche favorise le sommeil, apaiser le stress, l'anxiété.
+              </p>
+
+              <form id="form-encinte">
+                <p>Réservez la date et l'heure qui vous conviennent:</p>
+                <label>Date:</label>
+                <input
+                  type="date"
+                  id="start"
+                  name="date"
+                  value="2022-11-01"
+                  min="2022-11-01"
+                />
+
+                <label for="appt">Heure:</label>
+                <input
+                  type="time"
+                  id="time"
+                  name="time"
+                  min="09:00"
+                  max="09:00"
+                  value="09:00"
+                  required
+                />
+
+                <label>Temps:</label>
+                <select id="temps" class="temps" name="temps">
+                  <option value="selectionner">Sélectionner</option>
+                  <option
+                    value="60-min-femme-encinte"
+                    name="60-min-femme-encinte"
+                  >
+                    60 min
+                  </option>
+                  <option
+                    value="90-min-femme-encinte"
+                    name="90-min∂-femme-encinte"
+                  >
+                    90 min
+                  </option>
+                  <option
+                    value="120-min-femme-encinte"
+                    name="120-min-femme-encinte"
+                  >
+                    120 min
+                  </option>
+                </select>
+
+                <input
+                  type="text"
+                  id="name"
+                  placeholder="Your Name"
+                  name="name"
+                  required
+                />
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="Email"
+                  name="email"
+                  required
+                />
+                <input
+                  type="tel"
+                  id="phone"
+                  placeholder="Phone"
+                  name="phone"
+                  required
+                />
+
+                <input
+                  type="submit"
+                  class="btn-encinte"
+                  id="button-encinte"
+                  value="RESERVEZ"
+                />
+              </form>
+
+              <script
+                type="text/javascript"
+                src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+              ></script>
+
+              <script type="text/javascript">
+                emailjs.init('0EqkDZrYJxz2Gzf5z');
+              </script>
+            </div>
+          </div>
+          <img
+            src="https://images.unsplash.com/photo-1544784179-ae1535e9f013?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=998&q=80"
+            alt="Femme Encinte"
+          />
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="container">
+        <div class="split">
+          <div class="schedule">
+            <h2>OPENING HOURS</h2>
+            <p>
+              Monday to Thursday: 10am to 10pm <br />
+              Friday to Sunday: 9am to 10pm
+            </p>
+          </div>
+
+          <form id="form">
+            <h2>GET IN TOUCH</h2>
+            <input
+              type="text"
+              id="name"
+              placeholder="Your Name"
+              name="name"
+              required
+            />
+            <input
+              type="email"
+              id="email"
+              placeholder="Email"
+              name="email"
+              required
+            />
+            <input
+              type="tel"
+              id="phone"
+              placeholder="Phone"
+              name="phone"
+              required
+            />
+            <textarea
+              name="message"
+              id="message"
+              rows="4"
+              placeholder="Message"
+            ></textarea>
+            <input type="submit" id="button" class="btn" value="Send Email" />
+          </form>
+          <script
+            type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+          ></script>
+
+          <script type="text/javascript">
+            emailjs.init('0EqkDZrYJxz2Gzf5z');
+          </script>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script src="script.js"></script>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- https://cdnjs.com/libraries/font-awesome -->
+    <link rel="stylesheet" href="style.css" />
+    <title>Massage Royale</title>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="header">
+          <nav>
+            <h1 class="logo">Massage Royale</h1>
+            <ul class="nav__services">
+              <li><a href="#services">Services</a></li>
+              <li><a href="#location">Location</a></li>
+              <li><a href="#form">Contact</a></li>
+            </ul>
+          </nav>
+
+          <a href="#services"><button class="header__book">RESERVEZ</button></a>
+        </div>
+      </div>
+    </header>
+
+    <section class="services">
+      <div class="container">
+        <h1>SERVICES</h1>
+        <div class="services__description" id="services">
+          <div class="cards">
+            <div class="card">
+              <h3>MASSAGE DE LA FEMME ENCINTE</h3>
+              <small>60min $80 / 90min $100 / 120min $120</small>
+              <p>
+                Cet approche favorise le sommeil, apaiser le stress, l'anxiété.
+              </p>
+
+              <a href="femme_encinte.html"
+                ><button class="book">RESERVEZ</button></a
+              >
+            </div>
+
+            <div class="card">
+              <h3>MASSAGE SUÉDOIS: D'ÉTENTE</h3>
+              <small>60min $80 / 90min $100 / 120min $120</small>
+              <p>
+                Grâce à des gestes doux et fermes, le massage suédois vise à
+                détendre les muscles. Cette technique favorise la souplesse des
+                articulations et soulage les tensions musculaires.
+              </p>
+              <a href="d_etente.html"><button class="book">RESERVEZ</button></a>
+            </div>
+
+            <div class="card">
+              <h3>MASSAGE SUÉDOIS: THÉRAPEUTIQUE</h3>
+              <small>60min $80 / 90min $100 / 120min $120</small>
+              <p>
+                Ce massage cible une région spécifique du corps (le dos, la
+                nuque, les jambes ou les bras par exemple) en profondeur, pour
+                réduire les tensions avec un ensemble de manœuvres diversifiées.
+              </p>
+
+              <a href="therapeutique.html"
+                ><button class="book">RESERVEZ</button></a
+              >
+            </div>
+          </div>
+          <img
+            src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2861&q=80"
+            alt=""
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="location" id="location">
+      <div class="container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2794.6512325348094!2d-73.60898788439766!3d45.53722353658873!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc919566f064799%3A0x93f1a1fd02008b4a!2sKin%C3%A9-Concept%20-%20Guijek!5e0!3m2!1sen!2sca!4v1668779850800!5m2!1sen!2sca"
+          width="100%"
+          height="450"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="split">
+          <div class="schedule">
+            <h2>OPENING HOURS</h2>
+            <p>
+              Monday to Thursday: 10am to 10pm <br />
+              Friday to Sunday: 9am to 10pm
+            </p>
+          </div>
+
+          <form id="form">
+            <h2>GET IN TOUCH</h2>
+            <input
+              type="text"
+              id="name"
+              placeholder="Your Name"
+              name="name"
+              required
+            />
+            <input
+              type="email"
+              id="email"
+              placeholder="Email"
+              name="email"
+              required
+            />
+            <input
+              type="tel"
+              id="phone"
+              placeholder="Phone"
+              name="phone"
+              required
+            />
+            <textarea
+              name="message"
+              id="message"
+              rows="4"
+              placeholder="Message"
+            ></textarea>
+            <input
+              type="submit"
+              id="button"
+              class="btn-footer"
+              value="Send Email"
+            />
+          </form>
+          <script
+            type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+          ></script>
+
+          <script type="text/javascript">
+            emailjs.init('MZ7x•••••••••••••••••');
+          </script>
+        </div>
+      </div>
+    </footer>
+  </body>
+
+  <script src="script.js"></script>
+</html>
+
+const btn = document.getElementById('button');
+
+document.getElementById('form').addEventListener('submit', function (event) {
+  event.preventDefault();
+
+  btn.value = 'Sending...';
+
+  const serviceID = 'default_service';
+  const templateID = 'template_hkakt1w';
+
+  emailjs.sendForm(serviceID, templateID, this).then(
+    () => {
+      btn.value = 'Send Email';
+      alert('Sent!');
+    },
+    (err) => {
+      btn.value = 'Send Email';
+      alert(JSON.stringify(err));
+    }
+  );
+});
+
+const btnEncinte = document.getElementById('button-encinte');
+
+document
+  .getElementById('form-encinte')
+  .addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    btnEncinte.value = 'Sending...';
+
+    const serviceID = 'default_service';
+    const templateID = 'template_5u0qa0k';
+
+    emailjs.sendForm(serviceID, templateID, this).then(
+      () => {
+        btnEncinte.value = 'Send Email';
+        alert('Réservation Envoyé. Votre confirmation arrivera bientôt');
+      },
+      (err) => {
+        btnEncinte.value = 'Send Email';
+        alert(JSON.stringify(err));
+      }
+    );
+  });
+
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Domine:wght@700&family=Unna:wght@700&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  min-height: 100vh;
+}
+
+img {
+  width: 100%;
+  max-width: 600px;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+}
+/* HEADER */
+
+header {
+  background-image: url(https://images.unsplash.com/photo-1600334129128-685c5582fd35?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80);
+}
+
+.header {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* margin: 0 50px 0px 50px; */
+  color: white;
+}
+
+.logo {
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 7px gray;
+  font-family: 'Domine', serif;
+}
+.logo:hover {
+  color: #f5d5ae;
+}
+
+ul {
+  display: flex;
+  gap: 80px;
+  list-style: none;
+}
+
+li {
+  text-shadow: 1px 1px 7px gray;
+}
+
+li:hover {
+  color: #f5d5ae;
+}
+
+.header__book {
+  background-color: white;
+  margin: 100px auto;
+  padding: 10px 32px;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 4px;
+}
+
+.header__book:hover {
+  background-color: #f5d5ae;
+  color: white;
+  text-shadow: 1px 1px 7px gray;
+}
+
+/* SERVICES */
+.services__description {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card {
+  padding: 20px 0;
+  width: 80%;
+}
+.book {
+  border: 0;
+  padding: 10px 32px;
+  background-color: #f5d5ae;
+  border-radius: 4px;
+}
+
+.book:hover {
+  background-color: #f5d5ae;
+  color: white;
+}
+
+.location {
+  margin: 70px 0;
+}
+
+footer {
+  background-color: #f5d5ae;
+  padding: 60px;
+  margin-top: 30px;
+}
+
+.split {
+  display: flex;
+  justify-content: space-between;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px;
+}
+
+input {
+  margin: 5px 0;
+  padding: 5px 5px;
+  color: gray;
+}
+
+textarea {
+  margin: 5px 0;
+  padding: 5px 5px;
+  font-family: 'Roboto', sans-serif;
+  color: gray;
+}
+
+button {
+  margin-top: 5px;
+  padding: 10px 32px;
+  background-color: #f5d5ae;
+  border-radius: 4px;
+}
+.btn-encinte {
+  margin-top: 5px;
+  padding: 10px 32px;
+  background-color: #f5d5ae;
+  color: white;
+  border-radius: 4px;
+  border: none;
+}
+.btn-d-etente {
+  margin-top: 5px;
+  padding: 10px 32px;
+  background-color: #f5d5ae;
+  color: white;
+  border-radius: 4px;
+  border: none;
+}
+.btn-therapeutique {
+  margin-top: 5px;
+  padding: 10px 32px;
+  background-color: #f5d5ae;
+  color: white;
+  border-radius: 4px;
+  border: none;
+}
+
+button:checked {
+  transform: scale(4.2);
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+a:hover {
+  color: #f5d5ae;
+}
+
+.btn-footer {
+  background-color: white;
+  border: none;
+}
+
+.btn-footer:hover {
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  font-style: bold;
+  font-size: 1rem;
+}
+
+label {
+  margin: 10px 0;
+}
+
+.temps {
+  padding: 8px 0 8px 4px;
+  color: gray;
+  margin-bottom: 20px;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- https://cdnjs.com/libraries/font-awesome -->
+    <link rel="stylesheet" href="style.css" />
+    <title>MASSAGE SUÉDOIS: THÉRAPEUTIQUE</title>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <nav>
+          <h1 class="logo"><a href="index.html">Massage Royale</a></h1>
+          <ul class="nav__services">
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="index.html#location">Location</a></li>
+            <li><a href="#form">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="services">
+      <div class="container">
+        <h1>SERVICES</h1>
+        <div class="services__description">
+          <div class="cards">
+            <div class="card">
+              <h3>MASSAGE SUÉDOIS: THÉRAPEUTIQUE</h3>
+              <small>60min $80 / 90min $100 / 120min $120</small>
+              <p>
+                Ce massage cible une région spécifique du corps (le dos, la
+                nuque, les jambes ou les bras par exemple) en profondeur, pour
+                réduire les tensions avec un ensemble de manœuvres diversifiées.
+              </p>
+
+              <form id="form-therapeutique">
+                <p>Réservez la date et l'heure qui vous conviennent:</p>
+                <label>Date:</label>
+                <input
+                  type="date"
+                  id="start"
+                  name="date"
+                  value="2022-11-01"
+                  min="2022-11-01"
+                />
+
+                <label for="appt">Heure:</label>
+
+                <input
+                  type="time"
+                  id="time"
+                  name="time"
+                  min="09:00"
+                  max="20:00"
+                  value="09:00"
+                  required
+                />
+
+                <label>Temps:</label>
+                <select id="temps" class="temps" name="temps">
+                  <option value="selectionner">Sélectionner</option>
+                  <option value="soixante">60 min</option>
+                  <option value="quatre-vingt-dix">90 min</option>
+                  <option value="cent-vingt">120 min</option>
+                </select>
+
+                <input
+                  type="text"
+                  id="name"
+                  placeholder="Your Name"
+                  name="name"
+                  required
+                />
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="Email"
+                  name="email"
+                  required
+                />
+                <input
+                  type="tel"
+                  id="phone"
+                  placeholder="Phone"
+                  name="phone"
+                  required
+                />
+
+                <input
+                  type="submit"
+                  id="button-therapeutique"
+                  class="btn-therapeutique"
+                  value="RESERVEZ"
+                />
+              </form>
+
+              <script
+                type="text/javascript"
+                src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+              ></script>
+
+              <script type="text/javascript">
+                emailjs.init('0EqkDZrYJxz2Gzf5z');
+              </script>
+            </div>
+          </div>
+          <img
+            src="https://images.unsplash.com/photo-1542848284-8afa78a08ccb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=772&q=80"
+            alt="D'etente"
+          />
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="container">
+        <div class="split">
+          <div class="schedule">
+            <h2>OPENING HOURS</h2>
+            <p>
+              Monday to Thursday: 10am to 10pm <br />
+              Friday to Sunday: 9am to 10pm
+            </p>
+          </div>
+
+          <form id="form">
+            <h2>GET IN TOUCH</h2>
+            <input
+              type="text"
+              id="name"
+              placeholder="Your Name"
+              name="name"
+              required
+            />
+            <input
+              type="email"
+              id="email"
+              placeholder="Email"
+              name="email"
+              required
+            />
+            <input
+              type="tel"
+              id="phone"
+              placeholder="Phone"
+              name="phone"
+              required
+            />
+            <textarea
+              name="message"
+              id="message"
+              rows="4"
+              placeholder="Message"
+            ></textarea>
+            <input type="submit" id="button" class="btn" value="Send Email" />
+          </form>
+          <script
+            type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+          ></script>
+
+          <script type="text/javascript">
+            emailjs.init('0EqkDZrYJxz2Gzf5z');
+          </script>
+        </div>
+      </div>
+    </footer>
+  </body>
+
+  <script>
+    const btnTherapeutique = document.getElementById('button-therapeutique');
+
+    document
+      .getElementById('form-therapeutique')
+      .addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        btnTherapeutique.value = 'Sending...';
+
+        const serviceID = 'default_service';
+        const templateID = 'template_zgkslv3';
+
+        emailjs.sendForm(serviceID, templateID, this).then(
+          () => {
+            btnTherapeutique.value = 'Send Email';
+            alert('Sent!');
+          },
+          (err) => {
+            btnTherapeutique.value = 'Send Email';
+            alert(JSON.stringify(err));
+          }
+        );
+      });
+  </script>
+</html>
