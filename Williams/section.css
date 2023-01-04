@@ -1,0 +1,10 @@
+.languages {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+section {
+  line-height: 1.7;
+  color: var(--words);
+}

@@ -1,0 +1,27 @@
+.profile-picture {
+  height: 90vh;
+  width: 100%;
+  background-image: url(williams.jpg);
+  background-size: cover;
+  object-fit: contain;
+  background-position: 56% 100%;
+}
+
+.mobile-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.btn-success {
+  position: absolute;
+  bottom: 30px;
+  color: var(--background);
+  background-color: var(--pale);
+}
+
+.main-profile-picture {
+  display: none;
+}
