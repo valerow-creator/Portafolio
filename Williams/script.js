@@ -1,16 +1,10 @@
-// const toggleBox = document.querySelector('.toogleBox');
+'use strict';
+
+const hamburger = document.querySelector('.fa-bars');
 const navigation = document.querySelector('.navigation');
-const menu = document.querySelector('.menu');
-const close = document.querySelector('.close');
 
-// function showMenu() {
-//   navigation.classList.toggle('active');
-//   menu.classList.toggle('hide');
-//   closed.classList.toggle('show');
-// }
+hamburger.addEventListener('click', displayNavBar);
 
-function showMenu() {
-  navigation.classList.toggle('active');
-  menu.classList.toggle('hide');
-  close.classList.toggle('show');
+function displayNavBar() {
+  navigation.classList.toggle('hide');
 }

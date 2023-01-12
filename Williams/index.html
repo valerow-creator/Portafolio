@@ -19,109 +19,59 @@
     <link rel="stylesheet" href="style.css" />
 
     <!-- FAVICON -->
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/images/favicon.png"
+    />
     <title>Williams | Front-End Developer</title>
   </head>
   <body>
-    <nav>
-      <div class="container">
-        <div class="navbar">
-          <div class="logo">
-            <p class="logo__williams">
-              <span>WILLIAMS V.</span> <br />
-              <span class="logo__frontend">FRONTEND</span><br />
-              <span class="logo__developer">DEVELOPER</span>
-            </p>
-          </div>
-
-          <ul class="navigation">
-            <li class="navbar_item"><a href="#about">About</a></li>
-            <li class="navbar_item"><a href="#projects">Projects</a></li>
-            <li class="navbar_item">
-              <a href="mailto:valerow@outlook.com">Contact</a>
-            </li>
-          </ul>
-
-          <button class="toggleBox">
-            <i onclick="showMenu()" class="fa-solid fa-bars menu"></i>
-            <i class="fa-solid fa-xmark close"></i>
-          </button>
-        </div>
-      </div>
-    </nav>
-
     <main>
-      <div class="mobile-main">
-        <div class="profile-picture"></div>
-        <div class="star1"></div>
-        <div class="star2"></div>
-        <div class="star3"></div>
-        <div class="star4"></div>
-        <div class="star5"></div>
-        <div class="star6"></div>
-        <div class="star7"></div>
-        <div class="star8"></div>
-        <div class="star9"></div>
-        <div class="star10"></div>
-        <div class="rounded-mountain-1"></div>
-        <div class="rounded-mountain-2"></div>
-        <div class="moon"></div>
-        <div class="cloud-1">
-          <div class="rectangle1"></div>
-          <div class="circle1"></div>
-          <div class="circle2"></div>
-          <div class="circle3"></div>
-          <div class="circle4"></div>
+      <nav>
+        <div class="container">
+          <div class="navbar">
+            <div class="logo">
+              <p class="logo__williams">
+                <span>WILLIAMS V.</span> <br />
+                <span class="logo__frontend">FRONTEND</span><br />
+                <span class="logo__developer">DEVELOPER</span>
+              </p>
+            </div>
+
+            <ul class="navigation hide bar">
+              <li class="navbar_item"><a href="#about">About</a></li>
+              <li class="navbar_item"><a href="#projects">Projects</a></li>
+              <li class="navbar_item">
+                <a href="https://github.com/valerow-creator?tab=repositories"
+                  >github</a
+                >
+              </li>
+
+              <li class="navbar_item">
+                <a href="https://www.youtube.com/@NewbieHappyCoder/playlists"
+                  >youtube</a
+                >
+              </li>
+
+              <li class="navbar_item">
+                <a href="mailto:valerow@outlook.com">Contact</a>
+              </li>
+            </ul>
+
+            <i class="fa-sharp fa-solid fa-bars"></i>
+          </div>
         </div>
+      </nav>
 
-        <div class="cloud-2">
-          <div class="rectangle2"></div>
-          <div class="circle5"></div>
-          <div class="circle6"></div>
-          <div class="circle7"></div>
-          <div class="circle8"></div>
-        </div>
+      <img src="/images/working.svg" class="drawing" alt="" />
 
-        <div class="triangle1"></div>
-        <div class="triangle2"></div>
-        <div class="triangle3"></div>
-        <div class="snow1"></div>
-        <div class="snow2"></div>
-        <div class="snow3"></div>
-        <div class="snow4"></div>
-        <div class="snow5"></div>
-        <div class="snow6"></div>
-        <div class="snow7"></div>
-        <div class="snow8"></div>
-
-        <div class="trunk1"></div>
-        <div class="first-triangle"></div>
-        <div class="second-triangle"></div>
-
-        <div class="trunk2"></div>
-        <div class="thrid-triangle"></div>
-        <div class="fourth-triangle"></div>
-
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="earth1"
-          viewBox="0 0 1440 320"
-        >
-          <path
-            fill="#00c2b2"
-            fill-opacity="1"
-            d="M0,224L40,192C80,160,160,96,240,101.3C320,107,400,181,480,181.3C560,181,640,107,720,106.7C800,107,880,181,960,213.3C1040,245,1120,235,1200,208C1280,181,1360,139,1400,117.3L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"
-          ></path>
-        </svg>
-
-        <a href="#projects"
-          ><button type="button" class="btn btn-success">
-            See my projects
-          </button></a
-        >
+      <div class="container projectsButton">
+        <button type="button" class="btn btn-success">See my projects</button>
       </div>
     </main>
-
+    <!--
     <section>
       <div class="container main--profile">
         <div>
@@ -258,7 +208,7 @@
           </div>
         </div>
       </div>
-    </footer>
+    </footer> -->
     <script src="script.js"></script>
   </body>
 </html>

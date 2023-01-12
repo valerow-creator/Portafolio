@@ -9,7 +9,10 @@
   --pale: #f5f5f5;
   --calm: #81cacf;
   --words: rgba(125, 125, 125, 1);
+  --nav: #f5f5fc;
+  --nav-words: #3f3d56;
 }
+
 *,
 *:before,
 *:after {
@@ -23,6 +26,11 @@
 
 body {
   font-family: 'Roboto', sans-serif;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
 }
 
@@ -36,20 +44,29 @@ img {
 }
 
 /* unvisited link */
+nav a:link {
+  color: var(--nav-words);
+}
+
 a:link {
   color: var(--calm);
 }
-/* visited link */
-a:visited {
-  color: var(--calm);
-}
+
 /* mouse over link */
-.a:hover {
-  color: #effad3;
+.navbar_item a:hover,
+a:hover {
+  color: #fece62;
+  transform: scale(1.1);
 }
+
 /* selected link */
 a:active {
   color: #effad3;
+}
+
+.projectsButton {
+  display: flex;
+  justify-content: center;
 }
 
 .btn {
@@ -68,469 +85,6 @@ p {
   padding: 8px 0;
 }
 
-@media (min-width: 991px) {
-  .navigation {
-    display: flex;
-    z-index: 100;
-    justify-content: space-between;
-    align-items: center;
-    width: 500px;
-  }
-
-  ul {
-    padding-top: 0;
-  }
-
-  li {
-    margin: 0;
-  }
-
-  .toggleBox {
-    display: none;
-  }
-
-  .main-profile-picture {
-    display: block;
-  }
-
-  .profile-picture {
-    display: none;
-  }
-
-  .mobile-main {
-    height: 91vh;
-    background-color: var(--background);
-    position: relative;
-    overflow: hidden;
-  }
-  .star1 {
-    width: 4px;
-    height: 4px;
-    border-radius: 50%;
-    background-color: var(--pale);
-    position: absolute;
-    top: 60px;
-    left: 140px;
-  }
-  .star2 {
-    width: 4px;
-    height: 4px;
-    border-radius: 50%;
-    background-color: var(--pale);
-    position: absolute;
-    top: 140px;
-    left: 90px;
-  }
-  .star3 {
-    width: 4px;
-    height: 4px;
-    border-radius: 50%;
-    background-color: var(--pale);
-    position: absolute;
-    top: 110px;
-    left: 190px;
-  }
-  .star4 {
-    width: 4px;
-    height: 4px;
-    border-radius: 50%;
-    background-color: var(--pale);
-    position: absolute;
-    top: 95px;
-    left: 200px;
-  }
-  .star5 {
-    width: 4px;
-    height: 4px;
-    border-radius: 50%;
-    background-color: var(--pale);
-    position: absolute;
-    top: 100px;
-    left: 400px;
-  }
-  .rounded-mountain-1 {
-    width: 800px;
-    height: 800px;
-    background-color: #02435c;
-    position: absolute;
-    top: 350px;
-    left: -190px;
-    box-shadow: 6px -6px 12px #02394e, -6px 6px 12px #024d6a;
-    border-bottom-right-radius: 90%;
-    border-top-right-radius: 90%;
-    transform: rotate(-55deg);
-  }
-  .rounded-mountain-2 {
-    width: 800px;
-    height: 900px;
-    background-color: #02435c;
-    position: absolute;
-    top: 120px;
-    right: -110px;
-    box-shadow: 6px -6px 12px #02394e, -6px 6px 12px #024d6a;
-    border-bottom-right-radius: 90%;
-    border-top-right-radius: 90%;
-    transform: rotate(-55deg);
-  }
-  .moon {
-    width: 450px;
-    height: 450px;
-    border-radius: 50%;
-    background-color: var(--pale);
-    position: absolute;
-    top: 10px;
-    left: 495px;
-    background: linear-gradient(to right, #ffa38f, #fe7a68);
-    box-shadow: 6px 2px 5px #02394e, 6px 2px 7px #024d6a;
-  }
-  .star6 {
-    width: 4px;
-    height: 4px;
-    border-radius: 50%;
-    background-color: var(--pale);
-    position: absolute;
-    top: 60px;
-    right: 400px;
-  }
-  .star7 {
-    width: 4px;
-    height: 4px;
-    border-radius: 50%;
-    background-color: var(--pale);
-    position: absolute;
-    top: 95px;
-    right: 150px;
-  }
-  .star8 {
-    width: 4px;
-    height: 4px;
-    border-radius: 50%;
-    background-color: var(--pale);
-    position: absolute;
-    top: 175px;
-    right: 310px;
-    z-index: 1;
-  }
-  .star9 {
-    width: 4px;
-    height: 4px;
-    border-radius: 50%;
-    background-color: var(--pale);
-    position: absolute;
-    top: 195px;
-    right: 340px;
-    z-index: 1;
-  }
-  .star10 {
-    width: 4px;
-    height: 4px;
-    border-radius: 50%;
-    background-color: var(--pale);
-    position: absolute;
-    top: 225px;
-    right: 210px;
-    z-index: 1;
-  }
-  .cloud-1 {
-    position: relative;
-    width: 40px;
-    height: 40px;
-    top: -30px;
-    right: 470px;
-  }
-  .rectangle1 {
-    width: 30px;
-    height: 20px;
-    position: absolute;
-    top: 9px;
-    right: 4px;
-  }
-  .circle1 {
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    background-color: var(--pale);
-    position: absolute;
-    top: 0px;
-    left: 9px;
-  }
-  .circle2 {
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    background-color: var(--pale);
-    position: absolute;
-    top: 9px;
-    left: 20px;
-  }
-  .circle3 {
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    background-color: var(--pale);
-    position: absolute;
-    top: 14px;
-    left: 9px;
-  }
-  .circle4 {
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    background-color: var(--pale);
-    position: absolute;
-    top: 9px;
-    left: -2px;
-  }
-
-  .cloud-2 {
-    position: relative;
-    width: 40px;
-    height: 40px;
-    top: -80px;
-    left: 450px;
-  }
-  .rectangle2 {
-    width: 30px;
-    height: 20px;
-    position: absolute;
-    top: 9px;
-    right: 4px;
-  }
-  .circle5 {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: var(--pale);
-    position: absolute;
-    top: 3px;
-    left: 9px;
-  }
-  .circle6 {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: var(--pale);
-    position: absolute;
-    top: 9px;
-    left: 15px;
-  }
-  .circle7 {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: var(--pale);
-    position: absolute;
-    top: 12px;
-    left: 9px;
-  }
-  .circle8 {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: var(--pale);
-    position: absolute;
-    top: 9px;
-    left: 2px;
-  }
-
-  .triangle1 {
-    width: 270px;
-    height: 270px;
-    background-color: var(--background);
-    border-radius: 700px 700px 5000px 700px;
-    position: absolute;
-    transform: rotate(45deg);
-    top: 390px;
-    right: 480px;
-    box-shadow: 1px 1px 10px #02394e, 1px 1px 7px #024d6a;
-  }
-  .triangle2 {
-    width: 560px;
-    height: 610px;
-    background-color: #015a77;
-    border-radius: 2000px 2000px 2000px 500px;
-    position: absolute;
-    transform: rotate(45deg);
-    top: 350px;
-    right: 5px;
-    box-shadow: 1px 1px 7px #015a77, 1px 1px 7px #024d6a;
-  }
-  .triangle3 {
-    position: absolute;
-    width: 550px;
-    height: 550px;
-    border-radius: 700px 700px 5000px 700px;
-    background-color: #015a77;
-    box-shadow: 1px 1px 7px #015a77, 1px 1px 7px #024d6a;
-    transform: rotate(45deg);
-    top: 310px;
-    left: 223px;
-  }
-  .snow1 {
-    position: absolute;
-    width: 252px;
-    height: 260px;
-    border-radius: 700px 1px 3000px 1px;
-    background-color: var(--pale);
-    transform: rotate(45deg);
-    top: 246px;
-    left: 370px;
-  }
-  .snow2 {
-    width: 366px;
-    height: 90px;
-    background-color: #015a77;
-    position: absolute;
-    left: 314px;
-    top: 379px;
-  }
-  .snow3 {
-    width: 100px;
-    height: 50px;
-    background-color: var(--pale);
-    position: absolute;
-    transform: rotate(45deg);
-    top: 336px;
-    left: 580px;
-  }
-  .snow4 {
-    width: 100px;
-    height: 50px;
-    background-color: var(--pale);
-    position: absolute;
-    transform: rotate(45deg);
-    top: 336px;
-    left: 520px;
-  }
-  .snow5 {
-    width: 100px;
-    height: 50px;
-    background-color: var(--pale);
-    position: absolute;
-    transform: rotate(45deg);
-    top: 330px;
-    left: 460px;
-  }
-  .snow6 {
-    width: 100px;
-    height: 50px;
-    background-color: var(--pale);
-    position: absolute;
-    transform: rotate(45deg);
-    top: 336px;
-    left: 390px;
-  }
-  .snow7 {
-    width: 50px;
-    height: 50px;
-    background-color: var(--pale);
-    position: absolute;
-    transform: rotate(45deg);
-    top: 354px;
-    left: 363px;
-  }
-  .snow8 {
-    width: 50px;
-    height: 50px;
-    background-color: var(--pale);
-    position: absolute;
-    transform: rotate(45deg);
-    top: 359px;
-    left: 320px;
-  }
-  .earth1 {
-    z-index: 1;
-    position: absolute;
-    top: 400px;
-  }
-  .trunk1 {
-    position: absolute;
-    height: 5px;
-    width: 20px;
-    top: 594px;
-    left: 840px;
-    background-color: #e5ba73;
-    z-index: 100;
-  }
-  .first-triangle {
-    position: absolute;
-    height: 50px;
-    width: 50px;
-    top: 550px;
-    left: 825px;
-    background-image: linear-gradient(
-        to bottom right,
-        transparent 50%,
-        #508b9b 0
-      ),
-      linear-gradient(to top right, #016664 50%, transparent 0);
-    background-size: 50% 75%;
-    background-repeat: no-repeat;
-    background-position: left, right;
-    z-index: 100;
-  }
-  .second-triangle {
-    position: absolute;
-    height: 50px;
-    width: 50px;
-    top: 525px;
-    left: 825px;
-    background-image: linear-gradient(
-        to bottom right,
-        transparent 50%,
-        #508b9b 0
-      ),
-      linear-gradient(to top right, #016664 50%, transparent 0);
-    background-size: 50% 75%;
-    background-repeat: no-repeat;
-    background-position: left, right;
-    z-index: 100;
-  }
-  .trunk2 {
-    position: absolute;
-    height: 5px;
-    width: 20px;
-    top: 540px;
-    left: 240px;
-    background-color: #e5ba73;
-    z-index: 100;
-  }
-  .thrid-triangle {
-    position: absolute;
-    height: 50px;
-    width: 50px;
-    top: 496px;
-    left: 225px;
-    background-image: linear-gradient(
-        to bottom right,
-        transparent 50%,
-        #508b9b 0
-      ),
-      linear-gradient(to top right, #016664 50%, transparent 0);
-    background-size: 50% 75%;
-    background-repeat: no-repeat;
-    background-position: left, right;
-    z-index: 100;
-  }
-  .fourth-triangle {
-    position: absolute;
-    height: 50px;
-    width: 50px;
-    top: 480px;
-    left: 225px;
-    background-image: linear-gradient(
-        to bottom right,
-        transparent 50%,
-        #508b9b 0
-      ),
-      linear-gradient(to top right, #016664 50%, transparent 0);
-    background-size: 50% 75%;
-    background-repeat: no-repeat;
-    background-position: left, right;
-    z-index: 100;
-  }
-  .btn-success {
-    z-index: 100;
-    background-color: #ffe15d;
-  }
+.drawing {
+  height: 100vh;
 }
