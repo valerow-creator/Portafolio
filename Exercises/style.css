@@ -116,7 +116,7 @@ section {
 /* FOOTER */
 
 footer {
-  background-color: #a435f0;
+  background-color: #f1f6f5;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -126,19 +126,19 @@ footer {
 }
 
 .footer__links a {
-  color: #540375;
+  color: #a435f0;
   cursor: pointer;
   text-decoration: none;
 }
 
 .footer__links a:hover {
-  color: white;
+  color: #a435f0;
   cursor: pointer;
   text-decoration: none;
 }
 
 .footer__links a:visited {
-  color: #fcfdf2;
+  color: #a435f0;
   cursor: pointer;
   text-decoration: none;
 }
@@ -159,12 +159,21 @@ footer {
   margin: 20px 0;
 }
 
+.footer__fs i {
+  color: #a435f0;
+  cursor: pointer;
+}
+
 .footer__fs i:hover {
-  color: white;
+  color: #a435f0;
   cursor: pointer;
 }
 
 .footer__fs i:visited {
-  color: #fcfdf2;
+  color: #a435f0;
   cursor: pointer;
+}
+
+.contact {
+  color: #a435f0;
 }

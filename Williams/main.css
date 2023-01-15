@@ -1,27 +1,28 @@
-.profile-picture {
-  height: 90vh;
-  width: 100%;
-  background-image: url(williams.jpg);
-  background-size: cover;
-  object-fit: contain;
-  background-position: 56% 100%;
+.highlight {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 70%, #fece62 70%);
 }
 
-.mobile-main {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative;
+i:hover {
+  color: #fece62;
+  transform: scale(1.4);
 }
 
-.btn-success {
-  position: absolute;
-  bottom: 30px;
-  color: var(--background);
-  background-color: var(--pale);
-}
+@media (min-width: 768px) {
+  .main__profile__about {
+    margin-right: 24px;
+  }
 
-.main-profile-picture {
-  display: none;
+  .main--profile {
+    display: flex;
+    align-items: stretch;
+  }
+
+  .williams_pic {
+    display: none;
+  }
+
+  .main-profile-picture img {
+    background-image: url(images/williams.jpg);
+    margin-top: 48px;
+  }
 }

@@ -3,6 +3,7 @@
 @import 'main.css';
 @import 'section.css';
 @import 'footer.css';
+@import 'cards.css';
 
 :root {
   --background: #02435c;
@@ -48,8 +49,9 @@ nav a:link {
   color: var(--nav-words);
 }
 
-a:link {
-  color: var(--calm);
+a:link,
+a:visited {
+  color: var(--nav-words);
 }
 
 /* mouse over link */
@@ -61,12 +63,7 @@ a:hover {
 
 /* selected link */
 a:active {
-  color: #effad3;
-}
-
-.projectsButton {
-  display: flex;
-  justify-content: center;
+  color: #fece62;
 }
 
 .btn {
@@ -76,7 +73,7 @@ a:active {
 }
 
 h2 {
-  color: var(--calm);
+  color: #3f3d56;
   margin-top: 24px;
   padding: 24px 0;
 }
