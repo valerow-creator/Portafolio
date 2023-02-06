@@ -7,22 +7,23 @@
 .cards {
   display: flex;
   flex-direction: column;
-  box-shadow: 3px 3px 15px -7px rgba(0, 0, 0, 0.75);
-  border-radius: 8px;
-  margin-bottom: 30px;
-  padding: 15px;
+  box-shadow: 0.1875rem 0.1875rem 0.9375rem -0.4375rem rgba(0, 0, 0, 0.75);
+  border-radius: 0.5rem;
+  margin-bottom: 1.875rem;
+  padding: 0.9375rem;
   text-align: center;
-  max-width: 710px;
+  max-width: 44.375rem;
 }
 
 .cards__center {
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 }
 
 @media (min-width: 768px) {
   .projects {
     display: flex;
-    gap: 30px;
+    flex-direction: row;
+    gap: 1.875rem;
     flex: 1;
   }
 }
